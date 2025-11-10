@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design 3 Colors - Minimalist Style -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Primary Colors - Soft Blue -->
+    <color name="primary">#FF5E92F3</color>
+    <color name="primary_dark">#FF4A7BC8</color>
+    <color name="primary_light">#FF8FB4F9</color>
+    <color name="primary_variant">#FF3D5AFE</color>
+    
+    <!-- Accent Colors - Soft Green -->
+    <color name="accent">#FF66BB6A</color>
+    <color name="accent_light">#FF81C784</color>
+    
+    <!-- Background Colors -->
+    <color name="background">#FFF8F9FA</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="card_background">#FFFFFFFF</color>
+    <color name="input_container_bg">#FFF5F5F5</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FF1A1A1A</color>
+    <color name="text_secondary">#FF757575</color>
+    <color name="text_hint">#FFBDBDBD</color>
+    
+    <!-- Divider & Border -->
+    <color name="divider">#FFE0E0E0</color>
+    <color name="border">#FFEEEEEE</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#FF66BB6A</color>
+    <color name="error">#FFEF5350</color>
+    <color name="error_red">#FFEF5350</color>
+    <color name="warning">#FFFFA726</color>
+    <color name="info">#FF42A5F5</color>
+    
+    <!-- Additional Colors -->
+    <color name="background_light">#FFF8F9FA</color>
+    <color name="divider_color">#FFE0E0E0</color>
+    
+    <!-- Overlay -->
+    <color name="overlay_light">#1A000000</color>
+    <color name="overlay_dark">#4D000000</color>
+</resources>

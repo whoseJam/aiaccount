@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI记账</string>
+    <string name="tab_chat">记账</string>
+    <string name="tab_statistics">统计</string>
+    <string name="hint_input">输入记账信息</string>
+    <string name="btn_send">发送</string>
+    <string name="btn_voice">语音</string>
+    <string name="voice_input">语音输入</string>
+    <string name="send_message">发送消息</string>
+    <string name="press_to_talk">按住说话</string>
+    <string name="month_expense">本月支出</string>
+    <string name="year_expense">本年支出</string>
+    <string name="category_ranking">类目排名</string>
+    <string name="expense_details">支出明细</string>
+    <string name="processing">处理中...</string>
+    <string name="error_network">网络错误，请检查网络连接</string>
+    <string name="error_parse">解析失败，请重新输入</string>
+    <string name="success_record">记账成功</string>
+    
+    <!-- Categories -->
+    <string name="category_food">餐饮</string>
+    <string name="category_transport">交通</string>
+    <string name="category_clothing">衣服</string>
+    <string name="category_shopping">购物</string>
+    <string name="category_education">教育</string>
+    <string name="category_entertainment">娱乐</string>
+    <string name="category_utilities">生活</string>
+    <string name="category_sports">运动</string>
+    <string name="category_travel">旅行</string>
+    <string name="category_housing">住房</string>
+    <string name="category_insurance">保险</string>
+    <string name="category_service">服务</string>
+    <string name="category_charity">公益</string>
+    <string name="category_medical">医疗</string>
+    <string name="category_pet">宠物</string>
+    <string name="category_transfer">转账</string>
+    <string name="category_gift">人情</string>
+    <string name="category_beverage">饮品</string>
+    <string name="category_fruit">水果</string>
+    <string name="category_daily">日用</string>
+    <string name="category_snack">零食</string>
+    <string name="category_other">其他</string>
+</resources>
