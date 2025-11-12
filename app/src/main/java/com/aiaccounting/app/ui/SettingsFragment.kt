@@ -16,10 +16,6 @@ import com.aiaccounting.app.viewmodel.ExpenseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.aiaccounting.app.api.WhisperManager
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileOutputStream
 
 class SettingsFragment : Fragment() {
     
@@ -29,7 +25,6 @@ class SettingsFragment : Fragment() {
     private val chatViewModel: ChatViewModel by activityViewModels()
     private val expenseViewModel: ExpenseViewModel by activityViewModels()
     private lateinit var database: AppDatabase
-    private lateinit var whisperManager: WhisperManager
     
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,100 +41,12 @@ class SettingsFragment : Fragment() {
         // Initialize database
         database = AppDatabase.getDatabase(requireContext())
         
-        // Initialize Whisper manager
-        whisperManager = WhisperManager(requireContext())
-        
         setupClickListeners()
     }
     
     private fun setupClickListeners() {
         binding.btnClearDatabase.setOnClickListener {
             showClearDatabaseDialog()
-        }
-        
-        binding.btnWhisperTest.setOnClickListener {
-            testWhisperTranscription()
-        }
-    }
-    
-    private fun testWhisperTranscription() {
-        lifecycleScope.launch {
-            try {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                        requireContext(),
-                        "正在加载Whisper模型...",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                
-                // Load whisper model
-                val modelLoaded = withContext(Dispatchers.IO) {
-                    whisperManager.loadWhisperModel()
-                }
-                
-                if (!modelLoaded) {
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(
-                            requireContext(),
-                            "Whisper模型加载失败",
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
-                    return@launch
-                }
-                
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                        requireContext(),
-                        "模型加载成功，准备测试音频...",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                
-                // Read record.mp3 from assets
-                val internalRecordFile = File(context?.filesDir, "record.mp3")
-                
-                withContext(Dispatchers.IO) {
-                    // Copy file from assets to internal storage
-                    requireContext().assets.open("record.mp3").use { input ->
-                        FileOutputStream(internalRecordFile).use { output ->
-                            input.copyTo(output)
-                        }
-                    }
-                }
-                
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                        requireContext(),
-                        "音频文件已加载，开始转写...",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                
-                // Transcribe from file
-                val result = withContext(Dispatchers.IO) {
-                    whisperManager.transcribeFromFile(internalRecordFile)
-                }
-                
-                withContext(Dispatchers.Main) {
-                    AlertDialog.Builder(requireContext())
-                        .setTitle("Whisper音频转文字结果")
-                        .setMessage("音频文件：assets/record.mp3\n\n识别结果：\n\n$result")
-                        .setPositiveButton("确定", null)
-                        .setIcon(android.R.drawable.ic_dialog_info)
-                        .show()
-                }
-                
-            } catch (e: Exception) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                        requireContext(),
-                        "Whisper测试失败: ${e.message}",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
         }
     }
     

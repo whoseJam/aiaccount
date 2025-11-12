@@ -47,22 +47,6 @@
                     android:textColor="@color/black"
                     android:paddingBottom="16dp" />
 
-                <!-- Whisper Test Button -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_whisper_test"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:text="Whisper音频转文字测试"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/white"
-                    app:icon="@android:drawable/ic_media_play"
-                    app:iconGravity="start"
-                    app:iconTint="@android:color/white"
-                    app:backgroundTint="@color/primary"
-                    app:cornerRadius="8dp"
-                    android:elevation="0dp"
-                    android:layout_marginBottom="16dp" />
-
                 <!-- Clear Database Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_clear_database"

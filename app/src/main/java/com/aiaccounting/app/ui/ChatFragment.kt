@@ -154,16 +154,6 @@ class ChatFragment : Fragment() {
             }
         }
         
-        expenseViewModel.successMessage.observe(viewLifecycleOwner) { message ->
-            message?.let {
-                // Only show non-accounting success messages as regular system messages
-                if (!it.startsWith("记账成功：")) {
-                    chatViewModel.saveMessage(it, "system")
-                    Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-        
         expenseViewModel.errorMessage.observe(viewLifecycleOwner) { message ->
             message?.let {
                 chatViewModel.saveMessage("错误: $it", "error")
